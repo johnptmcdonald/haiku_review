@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-
+gem 'bootstrap-sass', '~> 3.2.0'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 group :test do
