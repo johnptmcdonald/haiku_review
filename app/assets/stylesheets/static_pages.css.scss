@@ -41,7 +41,7 @@ footer {
 
 input {
 	width: 100%;
-	margin: 0px 0px 15px 0px !important;
+	margin: 4px 0px 15px 0px !important;
 }
 
 
@@ -55,3 +55,14 @@ input {
       border-color: red;
     }
 }
+
+.checkbox {
+  margin: 0px 0px 15px 0px !important;
+
+  span {
+    margin: 0px 0px 0px 35px;
+    font-weight: normal;
+  }
+}
+
+
