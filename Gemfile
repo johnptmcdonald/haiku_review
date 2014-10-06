@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+
+
 gem 'bootstrap-sass', '~> 3.2.0'
+
 
 group :development, :test do
   gem 'sqlite3'
@@ -16,6 +19,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'unicorn'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
