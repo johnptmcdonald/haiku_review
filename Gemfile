@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 
-gem 'bootstrap-sass', '~> 3.2.0'
-
+gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'sqlite3'
