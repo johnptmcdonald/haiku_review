@@ -1,9 +1,11 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
+      
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
+<<<<<<< HEAD
 
       <section class="stats">
         <%= render 'shared/stats' %>
@@ -18,6 +20,17 @@
       </div>
 
 
+=======
+      
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+      
+>>>>>>> following-users
     </aside>
     <div class="col-md-8">
       <h3>Post feed</h3>

@@ -90,6 +90,24 @@ class User < ActiveRecord::Base
   		Micropost.from_users_followed_by(self)
   	end
 
+<<<<<<< HEAD
+=======
+  	def follow(other_user)
+  		active_relationships.create(followed_id: other_user.id)
+  	end
+
+  	def unfollow(other_user)
+  		active_relationships.find_by(followed_id: other_user.id).destroy
+  	end
+
+  	def following?(other_user)
+  		following.include?(other_user)
+  	end
+
+  	def feed
+  		Micropost.from_users_followed_by(self)
+  	end
+>>>>>>> following-users
 
 	private
 

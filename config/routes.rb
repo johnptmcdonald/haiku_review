@@ -14,11 +14,15 @@ Rails.application.routes.draw do
     end
   end
 
+<<<<<<< HEAD
   resources :relationships, only: [:create, :destroy]
   resources :searches
+=======
+>>>>>>> following-users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   get '/signup', to: 'users#new'
   get '/', to: 'static_pages#home'

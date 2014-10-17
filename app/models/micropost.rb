@@ -3,12 +3,15 @@ class Micropost < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+<<<<<<< HEAD
   validates :movie_ref, presence: true
   validates :title, presence: true
   validates :year, presence: true
 
   validate :content_must_be_a_haiku
 
+=======
+>>>>>>> following-users
 
   def Micropost.from_users_followed_by(user)
     following_ids = "SELECT followed_id FROM relationships
@@ -17,6 +20,7 @@ class Micropost < ActiveRecord::Base
           user_id: user)
   end
 
+<<<<<<< HEAD
     def content_must_be_a_haiku
     
     require_relative 'dictionary.rb'
@@ -82,3 +86,7 @@ class Micropost < ActiveRecord::Base
 
 
 end
+=======
+
+end
+>>>>>>> following-users
