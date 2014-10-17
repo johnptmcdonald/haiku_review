@@ -4,12 +4,23 @@ class MicropostsController < ApplicationController
 
 	def create
 		@micropost = current_user.microposts.build(micropost_params)
+
+
+
 		if @micropost.save
 			flash[:success] = "Post created"
-			redirect_to :back
+			redirect_to search_path(micropost_params[:movie_ref])
+
 		else
-			@feed_items = []
+			@title = micropost_params[:title]
+			@picture = micropost_params[:picture]
+			@year = micropost_params[:year]
+			@movie_ref = micropost_params[:movie_ref]
+
+			@microposts = Micropost.where(movie_ref: micropost_params[:movie_ref])
+
 			render 'searches/show'
+
 		end
 	end
 
