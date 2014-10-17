@@ -14,7 +14,7 @@
 			<%= link_to gravatar_for(@user, size: 60), @user %>
 			<h4><%= @user.name %></h4>
 		</section>
-<<<<<<< HEAD
+
 
     <section class="stats">
       <%= render 'shared/stats' %>
@@ -23,14 +23,7 @@
 	</aside>
 	<div class="col-md-8">
       <%= render 'follow_form' if logged_in? %>
-=======
-		<section class="stats">
-      		<%= render 'shared/stats' %>
-    	</section>
-	</aside>
-	<div class="col-md-8">
-		<%= render 'follow_form' if logged_in? %>
->>>>>>> following-users
+
     	<% if @user.microposts.any? %>
      		<h3>Microposts (<%= @user.microposts.count %>)</h3>
       		<ol class="microposts">

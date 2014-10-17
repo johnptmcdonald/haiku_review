@@ -18,8 +18,5 @@ class RelationshipsController < ApplicationController
       format.js
     end
   end
-<<<<<<< HEAD
+
 end
-=======
-end
->>>>>>> following-users
