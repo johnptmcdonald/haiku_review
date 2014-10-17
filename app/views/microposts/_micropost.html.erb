@@ -2,7 +2,7 @@
 
   <%= link_to image_tag(micropost.picture), search_path(micropost.movie_ref) %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="content"><%= micropost.content %></span>
+  <span class="content"><%= simple_format(micropost.content) %></span>
   <span class="title"><%= micropost.title %></span>
   <span class="picture"><%= micropost.picture %></span>
   <span class="year"><%= micropost.year %></span>
