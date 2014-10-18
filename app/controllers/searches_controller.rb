@@ -10,15 +10,16 @@ class SearchesController < ApplicationController
 	end
 
 	def show
+			@title = params[:title] ? params[:title] : Micropost.where(movie_ref: params[:id]).first.title 
+			@picture = params[:picture] ? params[:picture] : Micropost.where(movie_ref: params[:id]).first.picture 
+			@year = params[:year] ? params[:year] : Micropost.where(movie_ref: params[:id]).first.year 
+			@movie_ref = params[:id]
 
-		@title = params[:title] ? params[:title] : Micropost.where(movie_ref: params[:id]).first.title 
-		@picture = params[:picture] ? params[:picture] : Micropost.where(movie_ref: params[:id]).first.picture 
-		@year = params[:year] ? params[:year] : Micropost.where(movie_ref: params[:id]).first.year 
-		@movie_ref = params[:id]
 
-  		@micropost = current_user.microposts.build if logged_in?
-  		
-  		@microposts = Micropost.where(movie_ref: params[:id])
+	  		@micropost = current_user.microposts.build if logged_in?
+	  		
+	  		@microposts = Micropost.where(movie_ref: params[:id])
+
     end
 
 

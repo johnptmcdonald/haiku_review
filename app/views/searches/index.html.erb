@@ -26,7 +26,7 @@
 					<% title = movie['title'] %>
 					<% year = movie['year']%>	
 					<% params[:id] = movie['id'] %>
-					<%= link_to movie['title'], search_path(params[:id], :title => title, :year => year, :picture => movie['posters']['original']) %> <br><%= year %>
+					<%= link_to movie['title'], search_path(params[:id], title: title, year: year, picture: movie['posters']['original']) %> <br><%= year %>
 					
 					
 

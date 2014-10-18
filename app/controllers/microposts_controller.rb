@@ -8,10 +8,12 @@ class MicropostsController < ApplicationController
 
 
 		if @micropost.save
+
 			flash[:success] = "Post created"
-			redirect_to search_path(micropost_params[:movie_ref])
+			redirect_to search_path(id: micropost_params[:movie_ref], title: micropost_params[:title], year: micropost_params[:year], picture: micropost_params[:picture])
 
 		else
+			@content = micropost_params[:content]
 			@title = micropost_params[:title]
 			@picture = micropost_params[:picture]
 			@year = micropost_params[:year]
@@ -25,10 +27,18 @@ class MicropostsController < ApplicationController
 	end
 
 	def destroy
-		@micropost.destroy
-		flash[:success] = "Post deleted"
-		redirect_to request.referrer || root_url
-		
+		if Micropost.where(movie_ref: params[:id]).all.count !=0
+			@micropost.destroy
+			flash[:success] = "Post deleted"
+
+			redirect_to search_path(id: params[:movie_ref], title: params[:title], year: params[:year], picture: params[:picture])
+		else
+			@micropost.destroy
+			flash[:success] = "Post deleted"
+
+			redirect_to request.referrer || root_url
+
+		end
 	end
 
 	private
