@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
 
 	def index 
-		url = HTTParty.get"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=#{params[:movie]}&page_limit=10&page=1&apikey=kfv7rucknnzfxynqhnxparp8"
+		url = HTTParty.get"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=#{params[:movie]}&page_limit=10&page=1&apikey=" + ENV["ROTTEN_TOMATOES_API_KEY"]
 
 		@movie = JSON.parse(url.body)
 
