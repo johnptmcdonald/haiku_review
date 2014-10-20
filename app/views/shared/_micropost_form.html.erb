@@ -1,17 +1,19 @@
-<%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
 
-    <%= f.text_area :content, placeholder: "Compose new post...", value: @content %>
+	<%= form_for(@micropost) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+	  <div class="field">
 
-	<%= f.text_field :title, placeholder: "title", value: @title %>
+	    <%= f.text_area :content, placeholder: "Compose new post...", value: @content %>
 
-	<%= f.text_field :picture, placeholder: "picture", value: @picture %>
+		<%= f.text_field :title, placeholder: "title", value: @title %>
 
-	<%= f.text_field :year, placeholder: "year", value: @year %>
+		<%= f.text_field :picture, placeholder: "picture", value: @picture %>
 
-	<%= f.text_field :movie_ref, placeholder: "movie_ref", value: @movie_ref %>
+		<%= f.text_field :year, placeholder: "year", value: @year %>
 
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+		<%= f.text_field :movie_ref, placeholder: "movie_ref", value: @movie_ref %>
+
+	  </div>
+	  <%= f.submit "Post", class: "btn btn-primary" %>
+	<% end %>
+

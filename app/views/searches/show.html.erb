@@ -1,19 +1,29 @@
 
 
-
-<div class="row">
+	<div class="row">
 		<aside class="col-md-4">
-			
-			<section class="">
-				<%= render 'shared/user_info' %> 
-			</section>
 
-	    	<section class = "">
-				<%= render 'shared/micropost_form' %>
-			</section>
-			
+			<% if logged_in? %>
 
-	    </aside>
+				<section>
+					<%= render 'shared/user_info' %> 
+				</section>
+
+		    	<section>
+					<%= render 'shared/micropost_form' %>
+				</section>
+			
+			<% else %>
+
+
+				<section id="please_log_in">
+					<h4>Please <%= link_to "log in",login_path %> or <%= link_to "sign up", new_user_path %> to post a haiku review for this movie</h4>
+				</section>
+
+			<% end %>
+
+		</aside>
+
 	
 
 
