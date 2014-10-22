@@ -5,7 +5,7 @@
       <%= gravatar_for @user, size: 60 %>
       <h4><%= @user.name %></h4>
       <span><%= link_to "view my profile", @user %></span>
-      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+      <span>Haiku: <%= @user.microposts.count %></span>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>
