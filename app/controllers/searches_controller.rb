@@ -1,7 +1,9 @@
 class SearchesController < ApplicationController
 
 	def index 
-		input = params['movie'].split(/ /).join('+').to_sym
+		if params['movie'] != nil
+			input = params['movie'].split(/ /).join('+').to_sym 
+		end
 
 		url = HTTParty.get"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=#{input}&page_limit=25&page=1&apikey=" + ENV["ROTTEN_TOMATOES_API_KEY"]
 
