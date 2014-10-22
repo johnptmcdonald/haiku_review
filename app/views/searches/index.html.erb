@@ -6,10 +6,7 @@
 
 		<% if @movie['movies'].nil? %>
 
-		<%= form_tag searches_path, :method => 'get' do %>
-		    <div class="search btn"><%= text_field_tag :movie, params[:movie] %></div>
-		    <%= submit_tag "Search", class: "btn btn-primary search-button ", :name => nil %>
-		<% end %>
+		<%= render 'shared/search_form' %>
 
 		<% else %>
 

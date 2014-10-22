@@ -1,4 +1,4 @@
-      <div class = "searchform">
+      <div class = "search_form">
         <%= form_tag searches_path, :method => 'get' do %>
             <%= text_field_tag "movie", params["movie"],  placeholder: "Enter movie search term here..." %>
             <%= submit_tag "Search Movies", class: "btn btn-primary shrink", :name => nil %>

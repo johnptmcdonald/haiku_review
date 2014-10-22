@@ -26,8 +26,8 @@
 
 <div class="jumbotron text-center">
 
-	<h1>Welcome!</h1>
-	<h2>This is the homepage for a twitter clone</h2>
+	<h1>Haiku Review</h1>
+	<h2>Watch movies, write Haiku!</h2>
 
 	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 	
@@ -38,17 +38,13 @@
     <aside class="col-md-4">
       
       <section class="user_info">
-        <p>write stuff here </p>
+        <p>Use the search box below to find a movie, then write a review in the form of a HAIKU </p>
       </section>
 
 
 
-      <div class = "searchform">
-        <%= form_tag searches_path, :method => 'get' do %>
-            <%= text_field_tag :movie, params[:movie] %>
-            <%= submit_tag "Search", class: "btn btn-primary shrink", :name => nil %>
-        <% end %>
-      
+      <div class = "search_form">
+        <%= render 'shared/search_form' %>
       </div>
 
 
