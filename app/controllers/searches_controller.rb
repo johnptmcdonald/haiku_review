@@ -1,7 +1,9 @@
 class SearchesController < ApplicationController
 
 	def index 
-		url = HTTParty.get"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=#{params[:movie]}&page_limit=10&page=1&apikey=" + ENV["ROTTEN_TOMATOES_API_KEY"]
+		input = params['movie'].split(/ /).join('+').to_sym
+
+		url = HTTParty.get"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=#{input}&page_limit=25&page=1&apikey=" + ENV["ROTTEN_TOMATOES_API_KEY"]
 
 		@movie = JSON.parse(url.body)
 
@@ -18,7 +20,9 @@ class SearchesController < ApplicationController
 
 	  		@micropost = current_user.microposts.build if logged_in?
 	  		
-	  		@microposts = Micropost.where(movie_ref: params[:id])
+	  		@microposts = Micropost.where(movie_ref: params[:id]).paginate(page: params[:page])
+
+
 
     end
 

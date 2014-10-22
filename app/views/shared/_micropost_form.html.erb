@@ -3,15 +3,15 @@
 	  <%= render 'shared/error_messages', object: f.object %>
 	  <div class="field">
 
-	    <%= f.text_area :content, placeholder: "Compose new post...", value: @content %>
+	    <%= f.text_area :content, placeholder: "Compose your haiku review here! 5 syllables in the first line, 7 syllables in the second line, and 5 syllables in the third line...", value: @content %>
 
-		<%= f.text_field :title, placeholder: "title", value: @title %>
+		<%= f.hidden_field :title, placeholder: "title", value: @title %>
 
-		<%= f.text_field :picture, placeholder: "picture", value: @picture %>
+		<%= f.hidden_field :picture, placeholder: "picture", value: @picture %>
 
-		<%= f.text_field :year, placeholder: "year", value: @year %>
+		<%= f.hidden_field :year, placeholder: "year", value: @year %>
 
-		<%= f.text_field :movie_ref, placeholder: "movie_ref", value: @movie_ref %>
+		<%= f.hidden_field :movie_ref, placeholder: "movie_ref", value: @movie_ref %>
 
 	  </div>
 	  <%= f.submit "Post", class: "btn btn-primary" %>

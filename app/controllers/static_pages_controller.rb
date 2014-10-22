@@ -5,17 +5,21 @@ class StaticPagesController < ApplicationController
 	  	@feed_items = current_user.feed.paginate(page: params[:page])
 
 	  end
-    @microposts = Micropost.all
+    @microposts = Micropost.all.paginate(page: params[:page])
   end
 
   def help
   end
 
   def about
+  end
 
+  def recent_haiku
+      @microposts = Micropost.all.paginate(page: params[:page])
+  end
 
   	
-  end
+  
 
   def contact
   end

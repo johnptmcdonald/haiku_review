@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
 
   resources :searches
-
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
@@ -27,6 +26,7 @@ Rails.application.routes.draw do
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
+  get '/recent_haiku', to: 'static_pages#recent_haiku'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

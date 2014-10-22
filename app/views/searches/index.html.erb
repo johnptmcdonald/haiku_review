@@ -14,27 +14,29 @@
 		<% else %>
 
 
-		<% @movie['movies'].each do |movie| %>
+			<% @movie['movies'].each do |movie| %>
 
 			
 
-			<div class = "haikus movies">
+			<div class = "microposts">
 
 			<li>
 				<img src=<%= movie['posters']['detailed']%> class="moviethumbnail"></img>
+
 				<div class = "movietitle h3">
 					<% title = movie['title'] %>
 					<% year = movie['year']%>	
 					<% params[:id] = movie['id'] %>
 					<%= link_to movie['title'], search_path(params[:id], title: title, year: year, picture: movie['posters']['original']) %> <br><%= year %>
 					
-					
+				</div>
 
+				
+				<div class="synopsis">	
+					<%= movie['synopsis'] %>
 				</div>
-				<div class = "movietitle">	
-				<%= movie['synopsis'] %>
-				</div>
-				<div class = "clearfix"></div>
+
+				
 			</li>
 		</div>
 		<% end %>

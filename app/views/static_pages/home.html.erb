@@ -11,13 +11,9 @@
         <%= render 'shared/stats' %>
       </section>
 
-      <div class = "searchform">
-        <%= form_tag searches_path, :method => 'get' do %>
-            <%= text_field_tag :movie, params[:movie] %>
-            <%= submit_tag "Search", class: "btn btn-primary shrink", :name => nil %>
-        <% end %>
-      
-      </div>
+      <section class = "search_form">
+        <%= render "shared/search_form" %>
+      </section>
 
 
     </aside>
@@ -63,7 +59,7 @@
         <%= render @microposts %>
       </div>
     </div>
-  </div>
+</div>
 
 
 <% end %>

@@ -5,13 +5,13 @@
 
 			<% if logged_in? %>
 
-				<section>
+				<section class="user_info">
 					<%= render 'shared/user_info' %> 
 				</section>
 
-		    	<section>
+		    	<div>
 					<%= render 'shared/micropost_form' %>
-				</section>
+				</div>
 			
 			<% else %>
 
@@ -35,9 +35,11 @@
 
 			<!-- this displays the microposts for the shown movie -->
 			<div class="microposts">
-
-					<%= render @microposts %>
-
+	          	<%= will_paginate @microposts %>
+	      		<ol class="microposts">
+	        		<%= render @microposts %>
+	      		</ol>
+	      		<%= will_paginate @microposts %>
 			</div>
 
 

@@ -130,7 +130,7 @@ span.picture {
   span {
     display: block;
   }
-  h4 {
+  h4, p {
     margin: 24px 0px 0px 0px;
   }
 }
@@ -138,4 +138,23 @@ span.picture {
 #please_log_in {
   margin: 22px 0px 0px 0px;
   text-align: justify
+}
+
+h4 {
+   margin: 24px 0px 0px 0px;
+}
+
+#follow_form {
+  margin: 0px 0px 0px 0px;
+  width: 220px;
+  display: inline-block;
+}
+
+.movietitle {
+  display: inline-block;
+  margin: 0px 0px 0px 15px;
+}
+
+.synopsis {
+  margin: 10px 0px 0px 0px;
 }

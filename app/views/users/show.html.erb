@@ -3,11 +3,6 @@
 <div class="row">
 
 
-
-
-
-
-
 	<aside class="col-md-4 user_info">
 
 		<section>
@@ -20,12 +15,18 @@
       <%= render 'shared/stats' %>
     </section>
 
+    <br><br>
+
+    <section class="follow_form">
+      <%= render 'follow_form' if logged_in? %>
+    </section>
 	</aside>
 	<div class="col-md-8">
-      <%= render 'follow_form' if logged_in? %>
+      
 
     	<% if @user.microposts.any? %>
      		<h3>Microposts (<%= @user.microposts.count %>)</h3>
+          <%= will_paginate @microposts %>
       		<ol class="microposts">
         		<%= render @microposts %>
       		</ol>
