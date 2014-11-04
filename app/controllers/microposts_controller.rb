@@ -20,7 +20,7 @@ class MicropostsController < ApplicationController
 			@movie_ref = micropost_params[:movie_ref]
 
 
-			@microposts = Micropost.where(movie_ref: micropost_params[:movie_ref]).paginate(page: params[:page])
+			@microposts = Micropost.where(movie_ref: micropost_params[:movie_ref]).paginate(page: params[:page], :per_page => 10)
 			render 'searches/show'
 
 		end

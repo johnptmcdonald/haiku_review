@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
 
 	  end
     @microposts = Micropost.all.paginate(page: params[:page], :per_page => 10)
+    @feed_items = Micropost.all.paginate(page: params[:page], :per_page => 10)
   end
 
   def help
