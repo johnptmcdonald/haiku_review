@@ -22,7 +22,7 @@ class SearchesController < ApplicationController
 
 	  		@micropost = current_user.microposts.build if logged_in?
 	  		
-	  		@microposts = Micropost.where(movie_ref: params[:id]).paginate(page: params[:page])
+	  		@microposts = Micropost.where(movie_ref: params[:id]).paginate(page: params[:page], :per_page => 10)
 
 
 
